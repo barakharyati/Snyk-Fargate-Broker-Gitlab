@@ -20,11 +20,4 @@ Build Snyk Gitlab Broker on ECS Fargate including ALB, Security Groups and ECS S
 | snyk_docker_memory | number |  | 2048 |
 | fargate_SG_Ingress_Rules | set(object) | Fargate Host egress Rules - set(object({description=string,port= number,protocol=string, security_groups  = set(string),cidr_blocks  = set(string), ipv6_cidr_blocks set(string) } ) ) |  |
 | ALB_SG_Ingress_Rules | set(object) | Broker ALB Ingress Rules - set(object({description=string,port= number,protocol=string, security_groups  = set(string),cidr_blocks  = set(string), ipv6_cidr_blocks set(string) } ) ) |  |
-| certificate_arn | string | the certificate ARN (ACM) , if null the module will search for the zone wildcard certificate | "" |
-
-
-
-variable "r53_zone" {
-  description = "Route 53 zone for creating the domain record"
-  type        = string
-}
+| certificate_arn | string | the certificate ARN (ACM) , if null the module will search for the zone wildcard certificate | ""|
